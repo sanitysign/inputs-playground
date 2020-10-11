@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/visuallyhidden.css">
+
+  <link rel="stylesheet" href="css/choices.min.css">
+  <link rel="stylesheet" href="css/simplebar.css">
+  <link rel="stylesheet" href="css/justValidateTooltip.css">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="scene">
+      <div class="col col-1">
+        <!--------------------------------------Categories----------------------------------->
+        <div class="category">
+          <h2 class="category__heading">
+            Категории:
+          </h2>
+          <ul class="category__list">
+            <li class="category__item">
+              <label for="dino" class="category__label">
+                <input type="checkbox" name="dino" class="category__checkbox-vanilla visually-hidden dino" id="dino" >
+                <span class="check category__check"></span>
+                Динозавры
+              </label>
+            </li>
+            <li class="category__item">
+              <label for="bear" class="category__label">
+                <input type="checkbox" name="bear" class="category__checkbox-vanilla visually-hidden bear" id="bear" >
+                <span class="check category__check"></span>
+                Медведи
+              </label>
+            </li>
+            <li class="category__item">
+              <label for="roe" class="category__label">
+                <input type="checkbox" name="roe" class="category__checkbox-vanilla visually-hidden roe" id="roe" >
+                <span class="check category__check"></span>
+                Косули
+              </label>
+            </li>
+            <li class="category__item">
+              <label for="fox" class="category__label">
+                <input type="checkbox" name="fox" class="category__checkbox-vanilla visually-hidden fox" id="fox" >
+                <span class="check category__check"></span>
+                Лисы
+              </label>
+            </li>
+            <li class="category__item">
+              <label for="wolf" class="category__label">
+                <input type="checkbox" name="wolf" class="category__checkbox-vanilla visually-hidden wolf" id="wolf" >
+                <span class="check category__check"></span>
+                Волки
+              </label>
+            </li>
+            <li class="category__item">
+              <label for="deer-elk" class="category__label">
+                <input type="checkbox" name="deer-elk" class="category__checkbox-vanilla visually-hidden deer-elk" id="deer-elk" >
+                <span class="check category__check"></span>
+                Олени и лоси
+              </label>
+            </li>
+          </ul>
+        </div>
+        <!--------------------------------------Material-------------------------------------->
+        <div class="material-wrap">
+          <select name="material" id="material" class="material" tabindex="0" aria-label="Выберите материал">
+            <option placeholder class="material__placeholder">Материал</option>
+            <option value="wood" class="material__option">Древесина</option>
+            <option value="metall" class="material__option">Металл</option>
+            <option value="stone" class="material__option">Камень</option>
+            <option value="plastic" class="material__option">Пластик</option>
+            <option value="composite" class="material__option">Композитный</option>
+            <option value="gypsum" class="material__option">Гипс</option>
+          </select>
+        </div>
+      </div>
+      <div class="col col-2">
+        <!--------------------------------------Map------------------------------------------->
+        <div id="map-1" class="map-1" style="width: 460px; height: 460px" aria-label="Карта Парижа улица дю Фобур Сен Дени  54"></div>
+      </div>
+      <div class="col col-3">
+        <!--------------------------------------ScrollBar------------------------------------->
+        <p class="text-box">
+          Сложно сказать, почему многие известные личности представлены в исключительно положительном свете. Лишь активно развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы вынуждены отталкиваться от того, что высокотехнологичная концепция общественного уклада представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое развитие, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для первоочередных требований.
+        </p>
+      </div>
+      <div class="col col-4">
+        <!--------------------------------------Form------------------------------------------->
+        <div class="order">
+          <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="order__form" aria-label="Форма для оформаления заказа">
+            <div role="group" class="order__fieldset" aria-labelledby="order__legend">
+              <div class="order__legend visuallyhidden" id="order__legend">Введите ваши данные для заказа</div>
+              <div class="order__input-wrap">
+                <label for="order__input_name" class="order__label order__label_name">
+                  Как вас зовут?
+                </label>
+                <div class="just-validate-tooltip-container">
+                  <input type="text" name="name" class="order__input order__input_name" id="order__input_name" data-validate-field="order__input_name" placeholder="Имя*">
+                </div>
+              </div>
+              <div class="order__input-wrap">
+                <label for="order__input_phone" class="order__label order__label_name">
+                  Укажите ваш телефон
+                </label>
+                <div class="just-validate-tooltip-container">
+                  <input type="tel" name="phone" class="order__input order__input_phone" id="order__input_phone" data-validate-field="order__input_phone" placeholder="Телефон*">
+                </div>
+              </div>
+              <div class="order__input-wrap">
+                <label for="order__input_email" class="order__label order__label_name">
+                  Укажите ваш e-mail
+                </label>
+                <div class="just-validate-tooltip-container">
+                  <input type="email" name="email" class="order__input order__input_email" id="order__input_email" data-validate-field="order__input_email" placeholder="E-mail*">
+                </div>
+              </div>
+              <div class="order__input-wrap order__input-wrap_submit">
+                <label for="order__submit" class="order__submit-label visuallyhidden">
+                  Кнопка заказать
+                </label>
+                <input type="submit" class="order__submit btn" id="order__submit" value="Заказать">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/choices.min.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+  <script src="scripts/simplebar.min.js"></script>
+  <script src="scripts/just-validate.min.js"></script>
+  <script src="scripts/inputmask.min.js"></script>
+
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>
