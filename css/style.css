@@ -285,6 +285,11 @@ h2 {
 
 /* -----------------------------Map----------------------------- */
 
+.map-1 {
+  width: 460px;
+  height: 460px;
+}
+
 [class*="ground-pane"] {
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
@@ -314,6 +319,11 @@ h2 {
 
 .simplebar-scrollbar.simplebar-visible:before {
   opacity: 1;
+}
+
+.simplebar-track {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /* -----------------------------Form----------------------------- */
@@ -430,4 +440,66 @@ h2 {
   margin-left: 10px;
   -ms-flex-item-align: start;
       align-self: flex-start;
+}
+
+/* -----------------------------Media Requests----------------------------- */
+@media screen and (max-width: 480px) {
+  .scene {
+    margin-top: 5px;
+  }
+
+  .col {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    min-width: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .category {
+    min-width: auto;
+    width: 50vw;
+  }
+
+  .choices {
+    min-width: auto;
+    width: 45vw;
+    margin-left: 5vw;
+  }
+
+  .map-1 {
+    width: 80vw;
+    height: 100vw;
+  }
+
+  .text-box {
+    width: 80vw;
+  }
+
+  .order__fieldset {
+    width: 100vw;
+  }
+
+  .order__input-wrap {
+    width: 95%;
+  }
+  .btn {
+    max-width: 192px;
+    width: 80vw;
+  }
+
 }

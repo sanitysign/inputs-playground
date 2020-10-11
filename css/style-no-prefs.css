@@ -221,6 +221,11 @@ box-shadow: 0 0 6px 1px var(--accent-light);
 
 /* -----------------------------Map----------------------------- */
 
+.map-1 {
+  width: 460px;
+  height: 460px;
+}
+
 [class*="ground-pane"] {
   filter: grayscale(1);
 }
@@ -249,6 +254,11 @@ box-shadow: 0 0 6px 1px var(--accent-light);
 
 .simplebar-scrollbar.simplebar-visible:before {
   opacity: 1;
+}
+
+.simplebar-track {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /* -----------------------------Form----------------------------- */
@@ -332,6 +342,56 @@ box-shadow: 0 0 6px 1px var(--accent-light);
   align-self: flex-start;
 }
 
+/* -----------------------------Media Requests----------------------------- */
+@media screen and (max-width: 480px) {
+  .scene {
+    margin-top: 5px;
+  }
+
+  .col {
+    flex: 1 1 100%;
+    min-width: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .category {
+    min-width: auto;
+    width: 50vw;
+  }
+
+  .choices {
+    min-width: auto;
+    width: 45vw;
+    margin-left: 5vw;
+  }
+
+  .map-1 {
+    width: 80vw;
+    height: 100vw;
+  }
+
+  .text-box {
+    width: 80vw;
+  }
+
+  .order__fieldset {
+    width: 100vw;
+  }
+
+  .order__input-wrap {
+    width: 95%;
+  }
+  .btn {
+    max-width: 192px;
+    width: 80vw;
+  }
+
+}
 
 
 
