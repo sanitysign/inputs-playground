@@ -1,3 +1,20 @@
+<?php
+
+if($_POST["submit"]) {
+    $recipient="foursaid@yandex.by";
+    $subject="Testing sending emails";
+    $name=$_POST["name"];
+    $phone=$_POST["phone"];
+    $email=$_POST["email"];
+
+    $mailBody="Name: $name\nPhone: $phone\nEmail: $email";
+
+    mail($recipient, $subject, $mailBody);
+
+    $success="<div class='success'>The message has been sent</div>";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,7 +114,7 @@
       <div class="col col-4">
         <!--------------------------------------Form------------------------------------------->
         <div class="order">
-          <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="order__form" aria-label="Форма для оформаления заказа">
+          <form action="index.php" method="POST" class="order__form" aria-label="Форма для оформаления заказа">
             <div role="group" class="order__fieldset" aria-labelledby="order__legend">
               <div class="order__legend visuallyhidden" id="order__legend">Введите ваши данные для заказа</div>
               <div class="order__input-wrap">
@@ -128,10 +145,11 @@
                 <label for="order__submit" class="order__submit-label visuallyhidden">
                   Кнопка заказать
                 </label>
-                <input type="submit" class="order__submit btn" id="order__submit" value="Заказать">
+                <input type="submit" name="submit" class="order__submit btn" id="order__submit" value="Заказать">
               </div>
             </div>
           </form>
+          <?=$success ?>
         </div>
       </div>
     </div>

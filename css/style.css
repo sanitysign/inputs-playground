@@ -442,6 +442,17 @@ h2 {
       align-self: flex-start;
 }
 
+.success {
+  margin-top: 20px;
+  padding: 10px;
+  color: #fff;
+  font-size: 18px;
+  border: 1px solid rgb(94, 163, 77);
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(94, 163, 77, .2);
+}
+
 /* -----------------------------Media Requests----------------------------- */
 @media screen and (max-width: 480px) {
   .scene {
