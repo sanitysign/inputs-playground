@@ -5,18 +5,17 @@ const material = new Choices(select, {
   itemSelectText: '',
   shouldSort: false,
 })
-// .showDropdown()
 
 // ----------------------------------Map--------------------------------------
 ymaps.ready(init);
 function init(){
-    var myMap = new ymaps.Map("map-1", {
+    let myMap = new ymaps.Map("map-1", {
         center: [48.872197, 2.354224],
         zoom: 15,
         type: 'yandex#map',
         controls: [],
     });
-    var myGeoObject = new ymaps.Placemark([48.872197, 2.354224], {}, {
+    let myGeoObject = new ymaps.Placemark([48.872197, 2.354224], {}, {
       // preset: 'islands#greenIcon',
       iconLayout: 'default#image',
       iconImageHref: 'img/marker.svg',
@@ -34,19 +33,23 @@ new SimpleBar(document.querySelector('.text-box'), {
 })
 
 // --------------------------------------Form----------------------------------------
-var phone = document.querySelectorAll('input[type="tel"]')
-var imPhone = new Inputmask("+375 (99) 999-99-99")
+const form = document.querySelector('.order__form')
+const submitBtn = document.querySelector('.order__submit')
+
+const phone = document.querySelectorAll('input[type="tel"]')
+const imPhone = new Inputmask("+375 (99) 999-99-99")
+
 imPhone.mask(phone)
 
-var val = new window.JustValidate('.order__form', {
+const validate = new window.JustValidate('.order__form', {
+
   rules: {
     order__input_name: {
       required: true,
       minLength: 3,
       function: () => {
         const name = document.querySelector('.order__input_name').value
-        console.log(name)
-        var letters = /^[a-z, а-я, " "]+$/
+        let letters = /^[a-z, а-я, " "]+$/
         return name.match(letters)
       },
     },
@@ -54,7 +57,6 @@ var val = new window.JustValidate('.order__form', {
       required: true,
       function: () => {
         const phone = document.querySelector('.order__input_phone').inputmask.unmaskedvalue()
-        console.log(phone)
         return Number(phone) && phone.length === 9
       },
     },
@@ -82,9 +84,38 @@ var val = new window.JustValidate('.order__form', {
   tooltip: {
     fadeOutTime: 6000
   },
+  submitHandler: () => handleSubmit(form, submitBtn)
 })
 
+function handleSubmit(form, submitBtn) {
 
+  // form.reset()
+  submitBtn.classList.add(`submitted`)
 
+  const formData = new FormData(form)
+
+  if (form.action.slice(-3) === `...`) {
+    console.log(`Enter Formspree endpoint in the form`)
+    return
+  }
+
+  fetch(form.action, {
+
+    method: form.method,
+
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+    body: JSON.stringify(Object.fromEntries(formData))
+
+  }).then(response => console.log(response))
+}
+
+document.addEventListener(`input`, function(e) {
+
+  if (!e.target.classList.contains(`order__input`)) return
+
+  submitBtn.classList.remove(`submitted`)
+})
 
 

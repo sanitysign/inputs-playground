@@ -97,7 +97,7 @@
       <div class="col col-4">
         <!--------------------------------------Form------------------------------------------->
         <div class="order">
-          <form method="POST" class="order__form" aria-label="Форма для оформаления заказа">
+          <form action="https://formspree.io/f/..." method="POST" class="order__form" aria-label="Форма для оформаления заказа">
             <div role="group" class="order__fieldset" aria-labelledby="order__legend">
               <div class="order__legend visuallyhidden" id="order__legend">Введите ваши данные для заказа</div>
               <div class="order__input-wrap">
@@ -128,7 +128,7 @@
                 <label for="order__submit" class="order__submit-label visuallyhidden">
                   Кнопка заказать
                 </label>
-                <input type="submit" name="submit" class="order__submit btn" id="order__submit" value="Заказать">
+                <button type="submit" name="submit" class="order__submit btn" id="order__submit">Заказать</button>
               </div>
             </div>
           </form>
